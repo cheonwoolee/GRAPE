@@ -1,0 +1,14 @@
+# Hyperparameter search space for grid search
+# Keys listed under `active_keys` define the axes that are swept;
+# remaining keys are fixed across all combinations.
+
+active_keys: [alpha, nf, adapter, na, ema]
+
+pools:
+  # global model hyperparameters
+  alpha: [1, 10, 100, 1000, 10000]
+  nf: [50, 100, 500]
+  # adapter-specific hyperparameters
+  adapter: [nlms]
+  na: [5, 10, 50]
+  ema: [0.01, 0.05, 0.1, 0.5]

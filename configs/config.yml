@@ -1,0 +1,26 @@
+runtime:
+  random_seed: 42
+  default_threads: 4
+  processed_root: data/processed
+  results_dir: results/grid-search
+  context: hierarchical
+  nlms_lr: 0.01
+  rls_forgetting: 0.99
+
+datasets:
+  data-1:
+    feature_cache: data/data1
+    split_ratios: [25, 5, 10, 60]
+    alpha: 1000
+    nf: 50
+    adapter: nlms
+    na: 5
+    ema: 0.1
+  data-2:
+    feature_cache: data/data2
+    split_ratios: [25, 5, 10, 60]
+    alpha: 10000
+    nf: 500
+    adapter: nlms
+    na: 10
+    ema: 0.1
